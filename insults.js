@@ -1,47 +1,44 @@
-
 let x = 0;
+let jk = 0;
 
 let container = document.getElementById("balz");
 container.innerHTML = "Select category and amount of jokes";
 
-function fetchJokes() {
+async function fetchJokes() {
   let container2 = document.getElementById("balz2");
   let kate = document.getElementById("kate").value;
   container2.innerHTML = ""
 
-  for (let i = 0; i < x; i++) {
+ async function ReJoke() {
+    if (jk >= x) {
+      x = 0;
+      return;
+    }
+
     fetch('https://yomama-jokes.com/api/random')
       .then(response => response.json())
       .then(data => {
-        container2.innerHTML += `~ ${data.joke} <br><br>`;
-        let z=0;
-
-        while(z<1) {
-          if(container2.innerHTML.match(kate)) {
-            console.log("aa")
-            z = z+1;
-            break
+          if(data.joke.includes(kate)) {
+              container2.innerHTML += `~ ${data.joke} <br><br>`;
+              jk++;
+              ReJoke();
           }
           else {
-            container2.innerHTML = ""
-            fetchJokes()
+            ReJoke()
           }
-        }
-        
-        x = 0;
-        
       });
   }
+  ReJoke()
 }
 
-  function listQ() {
-    let e = document.getElementById("dropdown").value;
-    if (e > 10) {
-      return alert("Max jokes 10 vro"); 
-    }
-    else if (e > 0) {
-      x = x + e;
-    }
-  
-    fetchJokes();
+async function listQ() {
+  let e = document.getElementById("dropdown").value;
+  if (e > 10) {
+    return alert("Max jokes 10 vro"); 
   }
+  else if (e > 0) {
+    x = e;
+  }
+
+  fetchJokes();
+}
