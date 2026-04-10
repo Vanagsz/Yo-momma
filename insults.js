@@ -12,6 +12,7 @@ async function fetchJokes() {
  async function ReJoke() {
     if (jk >= x) {
       x = 0;
+      jk = 0;
       return;
     }
 
@@ -33,8 +34,8 @@ async function fetchJokes() {
 
 async function listQ() {
   let e = document.getElementById("dropdown").value;
-  if (e > 10) {
-    return alert("Max jokes 10 vro"); 
+  if (e > 3) {
+    return alert("Max jokes 3 vro"); 
   }
   else if (e > 0) {
     x = e;
