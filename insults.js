@@ -9,27 +9,34 @@ async function fetchJokes() {
   let kate = document.getElementById("kate").value;
   container2.innerHTML = ""
 
- async function ReJoke() {
-    if (jk >= x) {
-      x = 0;
-      jk = 0;
-      return;
-    }
+  try {
+    async function ReJoke() {
+      if (jk >= x) {
+        x = 0;
+        jk = 0;
+        return;
+      }
+  
+      fetch(`https://yomama-jokes.com/api/random`)
+        .then(response => response.json())
 
-    fetch('https://yomama-jokes.com/api/random')
-      .then(response => response.json())
-      .then(data => {
-          if(data.joke.includes(kate)) {
-              container2.innerHTML += `~ ${data.joke} <br><br>`;
-              jk++;
-              ReJoke();
-          }
-          else {
-            ReJoke()
-          }
-      });
+        .then(data => {
+            if(data.joke.includes(kate)) {
+                container2.innerHTML += `~ ${data.joke} <br><br>`;
+                jk++;
+                ReJoke();
+            }
+            else {
+              ReJoke()
+            }
+        });
+    }
+    ReJoke()
   }
-  ReJoke()
+  catch(error) {
+    console.error(error)
+    return
+  }
 }
 
 async function listQ() {
