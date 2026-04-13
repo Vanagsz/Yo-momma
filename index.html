@@ -16,32 +16,28 @@
 <div class="container">
     <div class="container1">
         <div class="joke-container">
-            <h1 id="balz"></h1>
+            <h1 id="balz">Choose the amount of jokes</h1>
             <h1 id="balz2"></h1>
         </div>
 
     <div class="selection-container">
         <input type="number" id="dropdown" placeholder="nr. 1-3">
-        <input type="text" id="kate" placeholder="input category">
         <input type="button" onclick="listQ()" value="🗣️SPIT ROAST" id="button-submit">
     </div>
     </div>
-<div class="container2">
-    <div id="category">
-    <h2>Categories</h2>
-    <ul>
-        <li>Fat</li>
-        <li>Skinny</li>
-        <li>Bald</li>
-        <li>Hairy</li>
-        <li>Stupid</li>
-        <li>Old</li>
-        <li>Nasty</li>
-        <li>Tall</li>
-        <li>Short</li>
-    </ul>
-    </div>
 </div>
+<div id="wrapper">
+    <div class="popup-box">
+        <h2>Pay up vro</h2>
+        <p>Due to our api being bad please pay us 5 bucks for a better api & a coffee</p>
+        <button class="close-button popup-close" onclick="closebtn()">x</button>
+        <div class="form-group">
+            <form method="post">
+                <input type="email" name="useremail-id" required placeholder="Please Enter your email">
+                <button type="submit" id="subscribe">SUBSCRIBE</button>
+            </form>
+      </div>
+      </div>
 </div>
     <script id="joke" src="insults.js" defer ></script>
 </body>
