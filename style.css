@@ -30,6 +30,7 @@ body {
 }
 
 .navbar-desc {
+    display: flex;
     font-weight: bolder;
     font-style: italic;
     font-size: 15px;
