@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Mouse+Memoirs&family=Rye&family=Special+Elite&display=swap');
-body{
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #1a1a1a;
     color: white;
     margin: 0;
     padding: 0;
 }
-.navbar{
+
+.navbar {
     background-color: #ff79d2;
     box-shadow: #ff79d2 0px 2px 8px 0px;
     width: 80%;
@@ -19,13 +21,15 @@ body{
     justify-content: center;
     align-items: center;
 }
-.navbar-logo{
-    font-family:  "Special Elite", system-ui;
+
+.navbar-logo {
+    font-family: "Special Elite", system-ui;
     font-size: 40px;
     color: #fff8b8;
     text-shadow: 2px 2px black;
 }
-.navbar-desc{
+
+.navbar-desc {
     font-weight: bolder;
     font-style: italic;
     font-size: 15px;
@@ -36,13 +40,13 @@ body{
     height: 35px;
 }
 
-.center{
+.center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container{
+.container {
     margin-top: 30px;
     margin-bottom: 30px;
     display: flex;
@@ -50,14 +54,14 @@ body{
     gap: 60px;
 }
 
-.container1{
+.container1 {
     display: flex;
     flex-direction: column;
     width: 70%;
     gap: 20px;
 }
 
-.joke-container{
+.joke-container {
     display: flex;
     justify-self: center;
     flex-direction: column;
@@ -66,6 +70,7 @@ body{
     margin-top: 15px;
     font-size: medium;   
     font-weight: lighter;
+    padding: 15px;
 }
 
 #balz {
@@ -76,11 +81,12 @@ body{
     font-weight: lighter;
     font-size: 1.5vw;
     border-radius: 10px;
-    width: 35%;
+    padding: 0 15px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 0 15px 0;
 }
 
 #balz2 {
@@ -89,13 +95,27 @@ body{
     color: #ffffff;
     font-size: 1.5vw;
     border-left: 4px solid #f553bf;
-    height: 25vh;
+    min-height: 25vh;
+    padding: 10px 0;
+}
+
+#balz2 ul {
+    margin: 0;
+    padding-left: 25px;
+}
+
+#balz2 li {
+    margin: 10px 0;
+    font-size: 1.3vw;
 }
 
 @media (width < 1200px) {
     #balz {
         text-wrap: wrap; 
         font-size: medium; 
+    }
+    #balz2 li {
+        font-size: 16px;
     }
 }
 
@@ -105,7 +125,7 @@ body{
     }
 }
 
-.selection-container{
+.selection-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,28 +134,22 @@ body{
     background-color: black;
     border: 1px solid rgb(255, 141, 217);
     border-radius: 10px;
+    padding: 10px;
 }
-#dropdown{
+
+#dropdown {
     background-color: #1a1a1a;
     color: white;
     border: 2px solid rgb(182, 39, 134);
     border-radius: 20px;
     font-family: "Mouse Memoirs", sans-serif;
     font-size: 20px;
-    height: 25px;
+    height: 30px;
+    width: 100px;
+    text-align: center;
 }
-#dropdown::placeholder{
-    color: rgb(182, 39, 134);
-}
-ul{
-    font-size: 28px;
-}
-h2{
-    margin-left: 8px;
-    border-left: 3px solid #f553bf;
-    font-family: "Changa", sans-serif;
-}
-#button-submit{
+
+#button-submit {
     border-radius: 15px;
     background-color: #ff5dc9;
     color: white;
@@ -144,41 +158,100 @@ h2{
     font-family: "Changa", sans-serif;
     transition: all 0.5s ease;
     height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
 }
-#button-submit:hover{
-   letter-spacing: 0.5px;
-   background-color: #f553bf;
-  	box-shadow: #ff5dc9 0px 0px 10px;
+
+#button-submit:hover {
+    letter-spacing: 0.5px;
+    background-color: #f553bf;
+    box-shadow: #ff5dc9 0px 0px 10px;
 }
-#button-submit:active{
-  transform: translateY(4px);
-  transition: 100ms;
+
+#button-submit:active {
+    transform: translateY(4px);
+    transition: 100ms;
 }
-/*POPUP*/
+
+/* POPUP */
 #wrapper {
     width: 100%;
     height: 100%;
     display: none;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    content: "";
-    background-color: #000000;
-  }
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
 .popup-box {
     width: 400px;
     padding: 50px;
     box-shadow: 0px 2px 16px rgba(255, 127, 244, 0.9);
     border-radius: 20px;
     text-align: center;
+    background-color: #1a1a1a;
+    position: relative;
 }
-.close-button{
+
+.close-button {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 15px;
     color: #f553bf;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     background: none;
     border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-button:hover {
+    color: #ff79d2;
+}
+
+.form-group {
+    margin-top: 20px;
+}
+
+.form-group input {
+    padding: 8px;
+    border-radius: 10px;
+    border: 2px solid #f553bf;
+    background: #2a2a2a;
+    color: white;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff79d2;
+}
+
+#subscribe {
+    background-color: #ff5dc9;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#subscribe:hover {
+    background-color: #f553bf;
+    box-shadow: #ff5dc9 0px 0px 10px;
+}
+
+h2 {
+    margin-left: 8px;
+    border-left: 3px solid #f553bf;
+    font-family: "Changa", sans-serif;
+    padding-left: 10px;
 }
