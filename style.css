@@ -104,10 +104,17 @@ body {
     margin-left: 30px;
     text-wrap: wrap;
     color: #ffffff;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     min-height: 25vh;
     padding: 10px 0;
 }
+
+@media (width < 1000px) {
+    #balz2 {
+        font-size: 1rem;
+    }
+}
+
 
 #balz2 ul {
     margin: 0;
