@@ -48,7 +48,7 @@ async function listQ() {
   }
 
 
-    if(z>=10) {
+    if(z>=3) {
       document.getElementById('wrapper').style.display = 'block';
       return
     }
